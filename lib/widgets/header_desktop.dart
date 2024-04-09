@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/const/colors.dart';
 import 'package:mohana_priya_portfolio/const/nav_item.dart';
 
+import '../styles/style.dart';
 import 'logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
@@ -12,10 +13,7 @@ class HeaderDesktop extends StatelessWidget {
     return Container(
       height: 60,
       margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(100),
-          gradient: const LinearGradient(
-              colors: [Colors.transparent, CustomColor.bgLight1])),
+      decoration: headerDecoration,
       child: Row(
         children: [
           const Logo(),

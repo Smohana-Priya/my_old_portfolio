@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mohana_priya_portfolio/widgets/header_desktop.dart';
+import 'package:mohana_priya_portfolio/widgets/drawer_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/header_mobile.dart';
 
 import '../const/colors.dart';
 
@@ -11,15 +12,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final scaffoldKey = GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        key: scaffoldKey,
+        endDrawer: const DrawerMobile(),
         backgroundColor: CustomColor.scaffoldbg,
         body: ListView(
           // scrollDirection: Axis.vertical,
 
-          children: const [
-            HeaderDesktop(),
+          children: [
+            // HeaderDesktop(),
+            HeaderMobile(
+              onLogoTap: () {},
+              onMenuTap: () {
+                scaffoldKey.currentState?.openEndDrawer();
+              },
+            )
           ],
         ));
   }
