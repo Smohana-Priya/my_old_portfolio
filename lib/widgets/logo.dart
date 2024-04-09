@@ -11,10 +11,7 @@ class Logo extends StatelessWidget {
       child: const Text(
         "Mp",
         style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            decoration: TextDecoration.underline,
-            color: Colors.amber),
+            fontSize: 22, fontWeight: FontWeight.bold, color: Colors.amber),
       ),
     );
   }
