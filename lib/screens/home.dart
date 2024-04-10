@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:mohana_priya_portfolio/widgets/drawer_mobile.dart';
-import 'package:mohana_priya_portfolio/widgets/header_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/mobile/header_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
 
 import '../const/colors.dart';
 import '../const/size.dart';
-import '../widgets/header_desktop.dart';
-import '../widgets/main_desktop.dart';
+import '../widgets/desktop/header_desktop.dart';
+import '../widgets/desktop/main_desktop.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -22,7 +23,7 @@ class _HomeState extends State<Home> {
     return LayoutBuilder(builder: (context, constraint) {
       return Scaffold(
           key: scaffoldKey,
-          endDrawer: constraint.maxWidth >= minDsktopWidth
+          endDrawer: constraint.maxWidth >= minDesktopWidth
               ? null
               : const DrawerMobile(),
           backgroundColor: CustomColor.scaffoldbg,
@@ -30,15 +31,11 @@ class _HomeState extends State<Home> {
             // scrollDirection: Axis.vertical,
 
             children: [
-              if (constraint.maxWidth >= minDsktopWidth)
+              const SizedBox(
+                height: 15,
+              ),
+              if (constraint.maxWidth >= minDesktopWidth)
                 const HeaderDesktop()
-              // Container(
-              //   child: Image.asset(
-              //     'assets/profile.jpeg',
-              //     width: 400,
-              //     height: 400,
-              //   ),
-              // )
               else
                 HeaderMobile(
                   onLogoTap: () {},
@@ -46,7 +43,10 @@ class _HomeState extends State<Home> {
                     scaffoldKey.currentState?.openEndDrawer();
                   },
                 ),
-              const MainDesktop()
+              if (constraint.maxWidth >= minDesktopWidth)
+                const MainDesktop()
+              else
+                const MainMobile()
             ],
           ));
     });

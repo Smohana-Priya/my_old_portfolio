@@ -1,1 +1,1 @@
-const double minDsktopWidth = 600;
+const double minDesktopWidth = 600;
