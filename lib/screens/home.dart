@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/widgets/desktop/about_desktop.dart';
+import 'package:mohana_priya_portfolio/widgets/desktop/skills_desktop.dart';
+import 'package:mohana_priya_portfolio/widgets/mobile/about_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/header_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/mobile/skills_mobile.dart';
 
 import '../const/colors.dart';
 import '../const/size.dart';
@@ -46,7 +50,15 @@ class _HomeState extends State<Home> {
               if (constraint.maxWidth >= minDesktopWidth)
                 const MainDesktop()
               else
-                const MainMobile()
+                const MainMobile(),
+              if (constraint.maxWidth >= minDesktopWidth)
+                const SkillDesktop()
+              else
+                const SkillsMobile(),
+              if (constraint.maxWidth >= minDesktopWidth)
+                const AboutDesktop()
+              else
+                const AboutMobile()
             ],
           ));
     });
