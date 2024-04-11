@@ -6,7 +6,8 @@ import '../../styles/style.dart';
 import '../logo.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+  final Function(int) onMenuItemTap;
+  const HeaderDesktop({super.key, required this.onMenuItemTap});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,9 @@ class HeaderDesktop extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(right: 20),
               child: TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    onMenuItemTap(i);
+                  },
                   child: Text(
                     navTitles[i],
                     style: const TextStyle(

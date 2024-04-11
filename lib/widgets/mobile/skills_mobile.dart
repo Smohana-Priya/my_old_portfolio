@@ -6,7 +6,8 @@ class SkillsMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      width: double.infinity,
+      height: 600,
       color: Colors.indigoAccent,
       child: const Text("Mobile-skills"),
     );

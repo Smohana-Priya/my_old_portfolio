@@ -6,7 +6,8 @@ class SkillDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
+      width: double.infinity,
+      height: 800,
       color: Colors.purple,
       child: const Text("Desktop - skills"),
     );
