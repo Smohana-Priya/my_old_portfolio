@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:mohana_priya_portfolio/screens/home.dart';
 
 void main() {
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mohana Priya',
-      theme: ThemeData.dark(),
+      theme: ThemeData(textTheme: GoogleFonts.habibiTextTheme()),
       home: const Home(),
     );
   }
