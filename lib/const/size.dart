@@ -1,1 +1,1 @@
-const double minDesktopWidth = 600;
+const double mobileWidth = 600;

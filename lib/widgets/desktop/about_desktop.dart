@@ -6,10 +6,9 @@ class AboutDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 800,
-      color: Colors.blue,
-      child: const Text("About desktop"),
+      color: Colors.green,
+      height: 700,
+      child: const Center(child: Text("desktop - about")),
     );
   }
 }

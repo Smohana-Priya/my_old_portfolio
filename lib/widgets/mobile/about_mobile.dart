@@ -6,10 +6,9 @@ class AboutMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: 800,
-      color: Colors.pinkAccent,
-      child: const Text("About mobile"),
+      color: Colors.green,
+      height: 700,
+      child: const Center(child: Text("desktop - mobile")),
     );
   }
 }

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/responsive/responsive_layout.dart';
 import 'package:mohana_priya_portfolio/widgets/desktop/about_desktop.dart';
 import 'package:mohana_priya_portfolio/widgets/desktop/skills_desktop.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/about_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
-import 'package:mohana_priya_portfolio/widgets/mobile/header_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/skills_mobile.dart';
 
@@ -26,58 +26,61 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return LayoutBuilder(builder: (context, constraint) {
       return Scaffold(
-          key: scaffoldKey,
-          endDrawer: constraint.maxWidth >= minDesktopWidth
-              ? null
-              : DrawerMobile(
-                  onNavItemTap: (navIndex) {
-                    scaffoldKey.currentState?.closeEndDrawer();
-                    scrollToSection(navIndex);
-                  },
-                ),
           backgroundColor: CustomColor.scaffoldbg,
+          key: scaffoldKey,
+          appBar: screenSize.width <= mobileWidth
+              ? AppBar(
+                  backgroundColor: Colors.amberAccent,
+                  title: const Text("Mohana priya"),
+                )
+              : PreferredSize(
+                  preferredSize: Size(screenSize.width, 100),
+                  child: HeaderDesktop(
+                    onMenuItemTap: (navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  )),
+          drawer: screenSize.width >= mobileWidth
+              ? null
+              : Drawer(
+                  child: DrawerMobile(
+                    onNavItemTap: (navIndex) {
+                      scaffoldKey.currentState?.closeDrawer();
+                      scrollToSection(navIndex);
+                    },
+                  ),
+                ),
           body: SingleChildScrollView(
             controller: scrollCntrl,
             child: Column(
               children: [
-                SizedBox(
-                  key: navbarKeys.first,
+                ResponsiveLayout(
+                  mobile: MainMobile(
+                    key: navbarKeys[0],
+                  ),
+                  desktop: MainDesktop(
+                    key: navbarKeys[0],
+                  ),
                 ),
-                if (constraint.maxWidth >= minDesktopWidth)
-                  HeaderDesktop(
-                    onMenuItemTap: (navIndex) {
-                      scrollToSection(navIndex);
-                    },
-                  )
-                else
-                  HeaderMobile(
-                    onLogoTap: () {},
-                    onMenuTap: () {
-                      scaffoldKey.currentState?.openEndDrawer();
-                    },
-                  ),
-                if (constraint.maxWidth >= minDesktopWidth)
-                  const MainDesktop()
-                else
-                  const MainMobile(),
-                if (constraint.maxWidth >= minDesktopWidth)
-                  SkillDesktop(
-                    key: navbarKeys[1],
-                  )
-                else
-                  SkillsMobile(
+                ResponsiveLayout(
+                  mobile: SkillsMobile(
                     key: navbarKeys[1],
                   ),
-                if (constraint.maxWidth >= minDesktopWidth)
-                  AboutDesktop(
+                  desktop: SkillDesktop(
+                    key: navbarKeys[1],
+                  ),
+                ),
+                ResponsiveLayout(
+                  mobile: AboutMobile(
                     key: navbarKeys[2],
-                  )
-                else
-                  AboutMobile(
+                  ),
+                  desktop: AboutDesktop(
                     key: navbarKeys[2],
-                  )
+                  ),
+                ),
               ],
             ),
           ));
