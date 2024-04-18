@@ -4,6 +4,7 @@ import 'package:mohana_priya_portfolio/widgets/desktop/about_desktop.dart';
 import 'package:mohana_priya_portfolio/widgets/desktop/skills_desktop.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/about_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/footer.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/skills_mobile.dart';
 
@@ -23,74 +24,86 @@ class _HomeState extends State<Home> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final scrollCntrl = ScrollController();
   final List<GlobalKey> navbarKeys = List.generate(3, (index) => GlobalKey());
+  bool isfabVisible = false;
+  @override
+  void initState() {
+    super.initState();
+    scrollCntrl.addListener(() {
+      setState(() {
+        isfabVisible = scrollCntrl.offset > 0;
+      });
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return LayoutBuilder(builder: (context, constraint) {
       return Scaffold(
-        backgroundColor: CustomColor.scaffoldbg,
-        key: scaffoldKey,
-        appBar: screenSize.width <= mobileWidth
-            ? AppBar(
-                backgroundColor: Colors.amberAccent,
-                title: const Text("Mohana priya"),
-              )
-            : PreferredSize(
-                preferredSize: Size(screenSize.width, 100),
-                child: HeaderDesktop(
-                  onMenuItemTap: (navIndex) {
-                    scrollToSection(navIndex);
-                  },
-                )),
-        drawer: screenSize.width >= mobileWidth
-            ? null
-            : Drawer(
-                child: DrawerMobile(
-                  onNavItemTap: (navIndex) {
-                    scaffoldKey.currentState?.closeDrawer();
-                    scrollToSection(navIndex);
-                  },
+          backgroundColor: CustomColor.scaffoldbg,
+          key: scaffoldKey,
+          appBar: screenSize.width <= mobileWidth
+              ? AppBar(
+                  backgroundColor: Colors.amberAccent,
+                  title: const Text("Mohana priya"),
+                )
+              : PreferredSize(
+                  preferredSize: Size(screenSize.width, 100),
+                  child: HeaderDesktop(
+                    onMenuItemTap: (navIndex) {
+                      scrollToSection(navIndex);
+                    },
+                  )),
+          drawer: screenSize.width >= mobileWidth
+              ? null
+              : Drawer(
+                  child: DrawerMobile(
+                    onNavItemTap: (navIndex) {
+                      scaffoldKey.currentState?.closeDrawer();
+                      scrollToSection(navIndex);
+                    },
+                  ),
                 ),
-              ),
-        body: SingleChildScrollView(
-          controller: scrollCntrl,
-          child: Column(
-            children: [
-              ResponsiveLayout(
-                mobile: MainMobile(
-                  key: navbarKeys[0],
+          body: SingleChildScrollView(
+            controller: scrollCntrl,
+            child: Column(
+              children: [
+                ResponsiveLayout(
+                  mobile: MainMobile(
+                    key: navbarKeys[0],
+                  ),
+                  desktop: MainDesktop(
+                    key: navbarKeys[0],
+                  ),
                 ),
-                desktop: MainDesktop(
-                  key: navbarKeys[0],
+                ResponsiveLayout(
+                  mobile: SkillsMobile(
+                    key: navbarKeys[1],
+                  ),
+                  desktop: SkillDesktop(
+                    key: navbarKeys[1],
+                  ),
                 ),
-              ),
-              ResponsiveLayout(
-                mobile: SkillsMobile(
-                  key: navbarKeys[1],
+                ResponsiveLayout(
+                  mobile: AboutMobile(
+                    key: navbarKeys[2],
+                  ),
+                  desktop: AboutDesktop(
+                    key: navbarKeys[2],
+                  ),
                 ),
-                desktop: SkillDesktop(
-                  key: navbarKeys[1],
-                ),
-              ),
-              ResponsiveLayout(
-                mobile: AboutMobile(
-                  key: navbarKeys[2],
-                ),
-                desktop: AboutDesktop(
-                  key: navbarKeys[2],
-                ),
-              ),
-            ],
+                const FooterMobile()
+              ],
+            ),
           ),
-        ),
-        floatingActionButton: FloatingActionButton(
-          onPressed: () {
-            scrollToSection(0);
-          },
-          child: const Icon(Icons.arrow_circle_up_sharp),
-        ),
-      );
+          floatingActionButton: isfabVisible
+              ? FloatingActionButton(
+                  onPressed: () {
+                    scrollToSection(0);
+                  },
+                  child: const Icon(Icons.arrow_circle_up_sharp),
+                )
+              : null);
     });
   }
 
