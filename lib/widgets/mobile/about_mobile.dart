@@ -8,7 +8,7 @@ class AboutMobile extends StatelessWidget {
     return Container(
       color: Colors.green,
       height: 700,
-      child: const Center(child: Text("desktop - mobile")),
+      child: const Center(child: Text("about - mobile")),
     );
   }
 }
