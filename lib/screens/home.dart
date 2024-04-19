@@ -6,12 +6,12 @@ import 'package:mohana_priya_portfolio/widgets/mobile/about_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/footer.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
-import 'package:mohana_priya_portfolio/widgets/mobile/skills_mobile.dart';
 
 import '../const/colors.dart';
 import '../const/size.dart';
 import '../widgets/desktop/header_desktop.dart';
 import '../widgets/desktop/main_desktop.dart';
+import '../widgets/mobile/skills_mobile.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -45,7 +45,12 @@ class _HomeState extends State<Home> {
           appBar: screenSize.width <= mobileWidth
               ? AppBar(
                   backgroundColor: Colors.amberAccent,
-                  title: const Text("Mohana priya"),
+                  actions: const [
+                    Padding(
+                      padding: EdgeInsets.only(right: 20),
+                      child: Text("Mp"),
+                    )
+                  ],
                 )
               : PreferredSize(
                   preferredSize: Size(screenSize.width, 100),
@@ -92,7 +97,7 @@ class _HomeState extends State<Home> {
                     key: navbarKeys[2],
                   ),
                 ),
-                const FooterMobile()
+                const Footer()
               ],
             ),
           ),

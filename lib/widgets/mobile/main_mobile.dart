@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../const/colors.dart';
+import '../../service/services.dart';
 
 class MainMobile extends StatelessWidget {
   const MainMobile({super.key});
@@ -56,7 +57,9 @@ class MainMobile extends StatelessWidget {
                 width: 15,
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  launchEmail("smohanapriya2604@gmail.com");
+                },
                 child: const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text('Hire Me Now'),

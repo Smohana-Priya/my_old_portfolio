@@ -14,7 +14,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Mohana Priya',
-      theme: ThemeData(textTheme: GoogleFonts.habibiTextTheme()),
+      theme: ThemeData(
+          textTheme: GoogleFonts.lobsterTextTheme(Typography.dense2014)),
       home: const Home(),
     );
   }

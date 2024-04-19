@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../const/colors.dart';
+import '../../service/services.dart';
 
 class MainDesktop extends StatelessWidget {
   const MainDesktop({super.key});
@@ -44,7 +45,10 @@ class MainDesktop extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        //   launchURL(
+                        //       'https://drive.google.com/file/d/15ICUDiS_LKm5U5_79T9ueAqNlPExcQl2/view?usp=drivesdk');
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
@@ -53,7 +57,9 @@ class MainDesktop extends StatelessWidget {
                     ),
                     const SizedBox(width: 15),
                     ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        launchEmail("smohanapriya2604@gmail.com");
+                      },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
