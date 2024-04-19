@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../const/contact_item.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../service/services.dart';
 
