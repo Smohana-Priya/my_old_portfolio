@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/responsive/responsive_layout.dart';
-import 'package:mohana_priya_portfolio/widgets/desktop/about_desktop.dart';
-import 'package:mohana_priya_portfolio/widgets/desktop/skills_desktop.dart';
-import 'package:mohana_priya_portfolio/widgets/mobile/about_mobile.dart';
+
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
 import 'package:mohana_priya_portfolio/widgets/footer.dart';
 import 'package:mohana_priya_portfolio/widgets/mobile/main_mobile.dart';
+import 'package:mohana_priya_portfolio/widgets/skill.dart';
 
 import '../const/colors.dart';
 import '../const/size.dart';
+import '../widgets/desktop/about_desktop.dart';
 import '../widgets/desktop/header_desktop.dart';
 import '../widgets/desktop/main_desktop.dart';
-import '../widgets/mobile/skills_mobile.dart';
+import '../widgets/mobile/about_mobile.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -48,7 +48,7 @@ class _HomeState extends State<Home> {
                   actions: const [
                     Padding(
                       padding: EdgeInsets.only(right: 20),
-                      child: Text("Mp"),
+                      child: Text("Mohana Priya"),
                     )
                   ],
                 )
@@ -81,13 +81,8 @@ class _HomeState extends State<Home> {
                     key: navbarKeys[0],
                   ),
                 ),
-                ResponsiveLayout(
-                  mobile: SkillsMobile(
-                    key: navbarKeys[1],
-                  ),
-                  desktop: SkillDesktop(
-                    key: navbarKeys[1],
-                  ),
+                Skills(
+                  key: navbarKeys[2],
                 ),
                 ResponsiveLayout(
                   mobile: AboutMobile(
