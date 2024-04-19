@@ -25,7 +25,7 @@ class MainDesktop extends StatelessWidget {
                 const Text(
                   'Hi, I\'m Mohana Priya',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
                     height: 1.5,
                     fontSize: 30,
                     color: CustomColor.whitePrimary,
@@ -34,7 +34,7 @@ class MainDesktop extends StatelessWidget {
                 const Text(
                   'Flutter Developer',
                   style: TextStyle(
-                    fontWeight: FontWeight.bold,
+                    // fontWeight: FontWeight.bold,
                     height: 1.5,
                     fontSize: 25,
                     color: Colors.amber,

@@ -44,7 +44,7 @@ class _HomeState extends State<Home> {
           key: scaffoldKey,
           appBar: screenSize.width <= mobileWidth
               ? AppBar(
-                  backgroundColor: Colors.amberAccent,
+                  backgroundColor: Theme.of(context).cardColor,
                   actions: const [
                     Padding(
                       padding: EdgeInsets.only(right: 20),
