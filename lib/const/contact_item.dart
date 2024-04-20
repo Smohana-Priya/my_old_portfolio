@@ -4,4 +4,9 @@ List<String> urls = [
   'https://www.instagram.com/smohanapriya078/',
   'smohanapriya2604@gmail.com'
 ];
-List<String> imgs = ['git.png', 'linkedin.png', 'insta.jpeg', 'mail.png'];
+List<String> imgs = [
+  'assets/git.png',
+  'assets/linkedin.png',
+  'insta.jpg',
+  'assets/mail.png'
+];

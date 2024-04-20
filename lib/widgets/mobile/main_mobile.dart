@@ -16,7 +16,7 @@ class MainMobile extends StatelessWidget {
         children: [
           ClipOval(
             child: Image.asset(
-              'assets/my_profile.jpeg',
+              'assets/profile.jpeg',
               width: screenSize.width,
               height: screenSize.height / 2.5,
             ),

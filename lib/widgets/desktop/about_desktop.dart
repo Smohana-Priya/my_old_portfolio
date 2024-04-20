@@ -10,20 +10,37 @@ class AboutDesktop extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+        height: 500,
         width: double.infinity,
         color: Colors.cyan,
         padding: const EdgeInsets.all(10),
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            for (int i = 0; i < imgs.length; i++)
-              Padding(
-                padding: const EdgeInsets.all(10.0),
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  decoration: const BoxDecoration(
-                      shape: BoxShape.circle, color: Colors.white),
-                  child: InkWell(
+            const Text(
+              "I am a passionate Flutter developer with two years of experience, I love building pixel-perfect apps for iOS and Android, ensuring responsiveness and publishing on App Store and Play Store. Now exploring fresh career paths!!!.",
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: 15,
+                color: Colors.white,
+              ),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            const Text(
+                'You can also connect with me here - let\'s stay in touch!'),
+            const SizedBox(
+              height: 5,
+            ),
+            Wrap(
+              alignment: WrapAlignment.center,
+              children: [
+                for (int i = 0; i < imgs.length; i++)
+                  Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: InkWell(
                       onTap: () {
                         if (imgs[i] == 'mail.png') {
                           launchEmail(urls[i]);
@@ -31,15 +48,22 @@ class AboutDesktop extends StatelessWidget {
                           launchURL(urls[i]);
                         }
                       },
-                      child: Image.asset(
-                        imgs[i],
-                        width: 15,
-                        height: 15,
-                      )),
+                      child: Container(
+                        padding: const EdgeInsets.all(8),
+                        decoration: const BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.white),
+                        child: Image.asset(
+                          imgs[i],
+                          width: 25,
+                          height: 25,
+                        ),
+                      ),
+                    ),
+                  ),
+                const SizedBox(
+                  height: 10,
                 ),
-              ),
-            const SizedBox(
-              height: 10,
+              ],
             ),
           ],
         ));

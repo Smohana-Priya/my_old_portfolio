@@ -1,0 +1,4 @@
+#Fri Apr 19 14:42:33 IST 2024
+base.0=/Users/mohanapriya/Documents/workspace/flutter/mohana_priya_portfolio/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

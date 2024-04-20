@@ -75,8 +75,7 @@ class MainDesktop extends StatelessWidget {
             flex: 1,
             child: CircleAvatar(
               radius: screenSize.width / 6,
-              backgroundImage: const AssetImage('assets/my_profile.jpeg'),
-              // child: Image.asset('assets/pic.jpeg'),
+              backgroundImage: const AssetImage('assets/profile.jpeg'),
             ),
           )
         ],

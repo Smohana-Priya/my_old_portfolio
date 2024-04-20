@@ -81,16 +81,16 @@ class _HomeState extends State<Home> {
                     key: navbarKeys[0],
                   ),
                 ),
-                Skills(
-                  key: navbarKeys[2],
-                ),
                 ResponsiveLayout(
                   mobile: AboutMobile(
-                    key: navbarKeys[2],
+                    key: navbarKeys[1],
                   ),
                   desktop: AboutDesktop(
-                    key: navbarKeys[2],
+                    key: navbarKeys[1],
                   ),
+                ),
+                Skills(
+                  key: navbarKeys[2],
                 ),
                 const Footer()
               ],
@@ -101,7 +101,7 @@ class _HomeState extends State<Home> {
                   onPressed: () {
                     scrollToSection(0);
                   },
-                  child: const Icon(Icons.arrow_circle_up_sharp),
+                  child: const Icon(Icons.arrow_upward),
                 )
               : null);
     });
