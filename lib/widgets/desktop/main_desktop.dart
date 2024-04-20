@@ -133,11 +133,6 @@ class MainDesktop extends StatelessWidget {
               child: Image.asset(StringConst.profile2),
             ),
           ),
-
-          // child: CircleAvatar(
-          //   radius: screenSize.width / 6,
-          //   backgroundImage: const AssetImage('assets/profile.jpeg'),
-          // ),
         ],
       ),
     );

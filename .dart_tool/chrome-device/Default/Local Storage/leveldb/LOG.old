@@ -1,3 +1,5 @@
-2024/04/20-19:27:13.103 2c03 Reusing MANIFEST /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.D8fnf0/flutter_tools_chrome_device.y1MzKx/Default/Local Storage/leveldb/MANIFEST-000001
-2024/04/20-19:27:13.105 2c03 Recovering log #3
-2024/04/20-19:27:13.105 2c03 Reusing old log /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.D8fnf0/flutter_tools_chrome_device.y1MzKx/Default/Local Storage/leveldb/000003.log 
+2024/04/20-19:40:56.422 2c03 Reusing MANIFEST /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.pMUd17/flutter_tools_chrome_device.IYvrYK/Default/Local Storage/leveldb/MANIFEST-000001
+2024/04/20-19:40:56.424 2c03 Recovering log #3
+2024/04/20-19:40:56.425 2c03 Level-0 table #3: started
+2024/04/20-19:40:56.449 2c03 Level-0 table #3: 16605 bytes OK
+2024/04/20-19:40:56.492 2c03 Delete type=0 #3

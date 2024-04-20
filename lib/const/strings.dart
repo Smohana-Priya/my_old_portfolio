@@ -13,7 +13,7 @@ class StringConst {
   static const String linkedInLogo = 'assets/linkedin.png';
   static const String instaLogo = 'assets/insta.jpg';
   static const String gamilLogo = 'assets/mail.png';
-  static const String flutterLogo = 'flutter.png';
+  static const String flutterLogo = 'assets/flutter.png';
   static const String firebaseLogo = 'assets/firebase.png';
   static const String netlifyLogo = 'assets/netlify.png';
   static const String profile = 'assets/profile.jpeg';
