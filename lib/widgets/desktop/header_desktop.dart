@@ -10,45 +10,54 @@ class HeaderDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 60,
-      // margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-      child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            const Text(
-              "Mp",
-              style: TextStyle(fontSize: 22, color: Colors.amber),
-            ),
-            const Spacer(),
-            for (int i = 0; i < navItems.length; i++)
-              TextButton(
-                  onPressed: () {
-                    onMenuItemTap(i);
-                  },
-                  child: Text(
-                    navItems[i].title,
-                    style: const TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColor.whitePrimary),
-                  )),
-            const SizedBox(
-              width: 30,
-            ),
-            ElevatedButton(
-              onPressed: () {
-                launchEmail("smohanapriya2604@gmail.com");
-              },
-              style: ElevatedButton.styleFrom(
-                padding:
-                    const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+    return Padding(
+      padding: const EdgeInsets.all(18.0),
+      child: SizedBox(
+        height: 60,
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Text(
+                "Mp",
+                style: TextStyle(
+                    fontSize: 22, color: Colors.amber, letterSpacing: 1.2),
               ),
-              child: const Text('Contact Me'),
-            )
-          ],
+              const Spacer(),
+              for (int i = 0; i < navItems.length; i++)
+                TextButton(
+                    onPressed: () {
+                      onMenuItemTap(i);
+                    },
+                    child: Text(
+                      navItems[i].title,
+                      style: const TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.w500,
+                          color: CustomColor.whitePrimary),
+                    )),
+              const SizedBox(
+                width: 30,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  launchEmail("smohanapriya2604@gmail.com");
+                },
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
+                ),
+                child: const Text(
+                  'Contact Me',
+                  style: TextStyle(
+                    fontSize: 20,
+                    // fontWeight: FontWeight.w500,
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

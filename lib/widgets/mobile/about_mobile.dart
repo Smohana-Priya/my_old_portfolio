@@ -9,8 +9,8 @@ class AboutMobile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenSize = MediaQuery.of(context).size;
     return Container(
-      height: 300,
       width: double.infinity,
       color: Colors.cyan,
       padding: const EdgeInsets.all(10),
@@ -21,24 +21,28 @@ class AboutMobile extends StatelessWidget {
           const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "About Me",
-                style: TextStyle(fontSize: 20),
+                "About Me - Who I Am",
+                style: TextStyle(fontSize: 15),
               )),
+          CircleAvatar(
+            radius: screenSize.width / 7,
+            backgroundImage: const AssetImage('assets/profile.jpeg'),
+          ),
           const SizedBox(
-            height: 30,
+            height: 10,
           ),
           const Text(
             "I am a passionate Flutter developer with two years of experience, I love building pixel-perfect apps for iOS and Android, ensuring responsiveness and publishing on App Store and Play Store. Now exploring fresh career paths!!!.",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 20,
+              fontSize: 13,
             ),
           ),
           const SizedBox(
             height: 30,
           ),
-          const Text(
-              'You can also connect with me here - let\'s stay in touch!'),
+          const Text('You can also connect with me here'),
+          const Text('let\'s stay in touch!'),
           const SizedBox(
             height: 5,
           ),

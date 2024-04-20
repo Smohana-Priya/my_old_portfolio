@@ -16,11 +16,12 @@ class Skills extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Column(
             children: [
-              const Align(
+              Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "My Skills",
-                    style: TextStyle(fontSize: 20),
+                    "My Skills - What I Know",
+                    style: TextStyle(
+                        fontSize: screenWidth < mobileWidth ? 15 : 20),
                   )),
               Wrap(
                 alignment: WrapAlignment.center,

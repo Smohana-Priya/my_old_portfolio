@@ -63,7 +63,7 @@ class DrawerMobile extends StatelessWidget {
                 const Text(
                   "Build with Flutter by ",
                   style: TextStyle(
-                      color: CustomColor.bgLight2, letterSpacing: 1.2),
+                      color: CustomColor.bgLight2, letterSpacing: 1.1),
                 ),
                 GestureDetector(
                   onTap: () {

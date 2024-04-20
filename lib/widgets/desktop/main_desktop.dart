@@ -50,7 +50,7 @@ class MainDesktop extends StatelessWidget {
                     color: Colors.amber,
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 30),
                 Wrap(
                   alignment: WrapAlignment.center,
                   children: [
@@ -62,7 +62,13 @@ class MainDesktop extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
                       ),
-                      child: const Text('Download CV'),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Download CV',
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
                     ),
                     const SizedBox(width: 15),
                     ElevatedButton(
@@ -73,15 +79,18 @@ class MainDesktop extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(
                             vertical: 15, horizontal: 20),
                       ),
-                      child: const Text(
-                        'Hire Me Now',
-                        style: TextStyle(),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Hire Me Now',
+                          style: TextStyle(fontSize: 18),
+                        ),
                       ),
                     )
                   ],
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 30,
                 ),
                 Wrap(
                   alignment: WrapAlignment.center,
@@ -103,8 +112,8 @@ class MainDesktop extends StatelessWidget {
                                 shape: BoxShape.circle, color: Colors.white),
                             child: Image.asset(
                               contacts[i].imgPath,
-                              width: 15,
-                              height: 15,
+                              width: 25,
+                              height: 25,
                             ),
                           ),
                         ),

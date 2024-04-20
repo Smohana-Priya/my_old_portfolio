@@ -19,12 +19,15 @@ class MainMobile extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text(
-            'Hi there, Welcome to My Portfolio',
-            style: TextStyle(
-              letterSpacing: 1.5,
-              fontSize: 20,
-              color: CustomColor.whiteSecondary,
+          const Align(
+            alignment: Alignment.center,
+            child: Text(
+              'Hi there, Welcome to My Portfolio',
+              style: TextStyle(
+                letterSpacing: 1.5,
+                fontSize: 16,
+                color: CustomColor.whiteSecondary,
+              ),
             ),
           ),
           const Text(
@@ -32,7 +35,7 @@ class MainMobile extends StatelessWidget {
             style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
-                fontSize: 24,
+                fontSize: 20,
                 // letterSpacing: 1,
                 color: CustomColor.whitePrimary),
           ),
@@ -41,7 +44,7 @@ class MainMobile extends StatelessWidget {
             style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
-                fontSize: 25,
+                fontSize: 22,
                 letterSpacing: 1.5,
                 color: Colors.amber),
           ),
