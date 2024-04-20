@@ -17,7 +17,11 @@ class Skills extends StatelessWidget {
           child: Column(
             children: [
               const Align(
-                  alignment: Alignment.topLeft, child: Text("My Skills")),
+                  alignment: Alignment.topLeft,
+                  child: Text(
+                    "My Skills",
+                    style: TextStyle(fontSize: 20),
+                  )),
               Wrap(
                 alignment: WrapAlignment.center,
                 children: [

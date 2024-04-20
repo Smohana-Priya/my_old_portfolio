@@ -10,7 +10,7 @@ class AboutMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: 300,
       width: double.infinity,
       color: Colors.cyan,
       padding: const EdgeInsets.all(10),
@@ -18,7 +18,12 @@ class AboutMobile extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          const Align(alignment: Alignment.topLeft, child: Text("About Me")),
+          const Align(
+              alignment: Alignment.topLeft,
+              child: Text(
+                "About Me",
+                style: TextStyle(fontSize: 20),
+              )),
           const SizedBox(
             height: 30,
           ),
@@ -26,8 +31,7 @@ class AboutMobile extends StatelessWidget {
             "I am a passionate Flutter developer with two years of experience, I love building pixel-perfect apps for iOS and Android, ensuring responsiveness and publishing on App Store and Play Store. Now exploring fresh career paths!!!.",
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: 15,
-              color: Colors.white,
+              fontSize: 20,
             ),
           ),
           const SizedBox(
@@ -58,8 +62,8 @@ class AboutMobile extends StatelessWidget {
                           shape: BoxShape.circle, color: Colors.white),
                       child: Image.asset(
                         contacts[i].imgPath,
-                        width: 25,
-                        height: 25,
+                        width: 15,
+                        height: 15,
                       ),
                     ),
                   ),

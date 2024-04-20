@@ -15,5 +15,5 @@ List<Contact> contacts = [
     Urls.insta,
     'assets/insta.jpg',
   ),
-  Contact(Urls.mailId, 'assets/mail.png')
+  Contact(Urls.mailId, 'mail.png')
 ];

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/const/urls.dart';
 
 import '../../const/colors.dart';
+import '../../data/contacts.dart';
 import '../../service/services.dart';
 
 class MainMobile extends StatelessWidget {
@@ -81,6 +82,37 @@ class MainMobile extends StatelessWidget {
                 ),
                 child: const Text('Hire Me Now'),
               )
+            ],
+          ),
+          const SizedBox(
+            height: 20,
+          ),
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: [
+              for (int i = 0; i < contacts.length; i++)
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: InkWell(
+                    onTap: () {
+                      if (contacts[i].imgPath == 'assets/mail.png') {
+                        launchEmail(contacts[i].url);
+                      } else {
+                        launchURL(contacts[i].url);
+                      }
+                    },
+                    child: Container(
+                      padding: const EdgeInsets.all(8),
+                      decoration: const BoxDecoration(
+                          shape: BoxShape.circle, color: Colors.white),
+                      child: Image.asset(
+                        contacts[i].imgPath,
+                        width: 15,
+                        height: 15,
+                      ),
+                    ),
+                  ),
+                ),
             ],
           ),
           const SizedBox(
