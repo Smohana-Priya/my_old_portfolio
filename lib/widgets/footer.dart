@@ -70,7 +70,8 @@ class _FooterMobileState extends State<Footer> {
               children: [
                 const Text(
                   "Build with Flutter by ",
-                  style: TextStyle(color: CustomColor.whiteSecondary),
+                  style: TextStyle(
+                      color: CustomColor.whiteSecondary, letterSpacing: 1.2),
                 ),
                 GestureDetector(
                   onTap: () {
@@ -86,7 +87,8 @@ class _FooterMobileState extends State<Footer> {
                 ),
                 const Text(
                   " | © 2024 all rights reserved",
-                  style: TextStyle(color: CustomColor.whiteSecondary),
+                  style: TextStyle(
+                      color: CustomColor.whiteSecondary, letterSpacing: 1.2),
                 ),
               ],
             ),

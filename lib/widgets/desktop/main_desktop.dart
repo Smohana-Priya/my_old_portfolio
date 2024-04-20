@@ -12,8 +12,8 @@ class MainDesktop extends StatelessWidget {
     final screenSize = MediaQuery.of(context).size;
     return Container(
       width: screenSize.width,
-      height: screenSize.height / 1.2,
-      margin: const EdgeInsets.symmetric(horizontal: 20),
+      // height: screenSize.height / 1.2,
+      // margin: const EdgeInsets.symmetric(horizontal: 20),
       constraints: const BoxConstraints(minHeight: 320),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -24,7 +24,15 @@ class MainDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Hi, I\'m Mohana Priya',
+                  'Hi there, Welcome to My Portfolio',
+                  style: TextStyle(
+                    letterSpacing: 1.5,
+                    fontSize: 20,
+                    color: CustomColor.whiteSecondary,
+                  ),
+                ),
+                const Text(
+                  'I\'m Mohana Priya',
                   style: TextStyle(
                     // fontWeight: FontWeight.bold,
                     height: 1.5,
@@ -73,11 +81,19 @@ class MainDesktop extends StatelessWidget {
           ),
           Expanded(
             flex: 1,
-            child: CircleAvatar(
-              radius: screenSize.width / 6,
-              backgroundImage: const AssetImage('assets/profile.jpeg'),
+            child: ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(100.0),
+                bottomLeft: Radius.circular(100.0),
+              ),
+              child: Image.asset('assets/my_profile.jpeg'),
             ),
-          )
+          ),
+
+          // child: CircleAvatar(
+          //   radius: screenSize.width / 6,
+          //   backgroundImage: const AssetImage('assets/profile.jpeg'),
+          // ),
         ],
       ),
     );

@@ -41,6 +41,7 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: LayoutBuilder(builder: (context, constraint) {
         return Scaffold(
+            // extendBodyBehindAppBar: true,
             backgroundColor: CustomColor.scaffoldbg,
             key: scaffoldKey,
             appBar: screenSize.width <= mobileWidth
@@ -49,7 +50,10 @@ class _HomeState extends State<Home> {
                     actions: const [
                       Padding(
                         padding: EdgeInsets.only(right: 20),
-                        child: Text("Mohana Priya"),
+                        child: Text(
+                          "Mp",
+                          style: TextStyle(fontSize: 20),
+                        ),
                       )
                     ],
                   )
@@ -82,16 +86,16 @@ class _HomeState extends State<Home> {
                       key: navbarKeys[0],
                     ),
                   ),
+                  Skills(
+                    key: navbarKeys[1],
+                  ),
                   ResponsiveLayout(
                     mobile: AboutMobile(
-                      key: navbarKeys[1],
+                      key: navbarKeys[2],
                     ),
                     desktop: AboutDesktop(
-                      key: navbarKeys[1],
+                      key: navbarKeys[2],
                     ),
-                  ),
-                  Skills(
-                    key: navbarKeys[2],
                   ),
                   const Footer()
                 ],

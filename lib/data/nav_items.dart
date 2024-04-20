@@ -4,6 +4,6 @@ import '../model/nav_item.dart';
 
 List<NavItem> navItems = [
   NavItem('Home', Icons.home),
-  NavItem('About', Icons.mail),
   NavItem('Skills', Icons.handyman),
+  NavItem('About', Icons.mail),
 ];

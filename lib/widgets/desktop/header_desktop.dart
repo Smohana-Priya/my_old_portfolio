@@ -10,8 +10,7 @@ class HeaderDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: CustomColor.hintDark,
+    return SizedBox(
       height: 60,
       // margin: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
       child: Padding(
@@ -32,7 +31,7 @@ class HeaderDesktop extends StatelessWidget {
                   child: Text(
                     navItems[i].title,
                     style: const TextStyle(
-                        fontSize: 16,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500,
                         color: CustomColor.whitePrimary),
                   )),

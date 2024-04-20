@@ -15,22 +15,24 @@ class MainMobile extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          ClipOval(
-            child: Image.asset(
-              'assets/profile.jpeg',
-              width: screenSize.width,
-              height: screenSize.height / 2.5,
-            ),
-          ),
           const SizedBox(
-            height: 20,
+            height: 30,
           ),
           const Text(
-            'Hi, I\'m Mohana Priya',
+            'Hi there, Welcome to My Portfolio',
+            style: TextStyle(
+              letterSpacing: 1.5,
+              fontSize: 20,
+              color: CustomColor.whiteSecondary,
+            ),
+          ),
+          const Text(
+            'I\'m Mohana Priya',
             style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
                 fontSize: 24,
+                // letterSpacing: 1,
                 color: CustomColor.whitePrimary),
           ),
           const Text(
@@ -39,10 +41,21 @@ class MainMobile extends StatelessWidget {
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
                 fontSize: 25,
+                letterSpacing: 1.5,
                 color: Colors.amber),
           ),
           const SizedBox(
             height: 20,
+          ),
+          ClipOval(
+            child: Image.asset(
+              'assets/my_profile.jpeg',
+              width: screenSize.width,
+              height: screenSize.height / 2.5,
+            ),
+          ),
+          const SizedBox(
+            height: 25,
           ),
           Wrap(
             alignment: WrapAlignment.center,
@@ -69,7 +82,10 @@ class MainMobile extends StatelessWidget {
                 child: const Text('Hire Me Now'),
               )
             ],
-          )
+          ),
+          const SizedBox(
+            height: 25,
+          ),
         ],
       ),
     );
