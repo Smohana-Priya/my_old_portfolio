@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/const/strings.dart';
 import 'package:mohana_priya_portfolio/responsive/responsive_layout.dart';
 
 import 'package:mohana_priya_portfolio/widgets/mobile/drawer_mobile.dart';
@@ -41,7 +42,6 @@ class _HomeState extends State<Home> {
     return SafeArea(
       child: LayoutBuilder(builder: (context, constraint) {
         return Scaffold(
-            // extendBodyBehindAppBar: true,
             backgroundColor: CustomColor.scaffoldbg,
             key: scaffoldKey,
             appBar: screenSize.width <= mobileWidth
@@ -51,7 +51,7 @@ class _HomeState extends State<Home> {
                       Padding(
                         padding: EdgeInsets.only(right: 20),
                         child: Text(
-                          "Mp",
+                          StringConst.mp,
                           style: TextStyle(fontSize: 20),
                         ),
                       )

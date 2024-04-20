@@ -2,9 +2,9 @@
 
 import 'package:flutter/material.dart';
 
-import 'package:mohana_priya_portfolio/const/urls.dart';
 import 'package:mohana_priya_portfolio/const/colors.dart';
 
+import '../const/strings.dart';
 import '../service/services.dart';
 
 class Footer extends StatelessWidget {
@@ -23,16 +23,16 @@ class Footer extends StatelessWidget {
           alignment: WrapAlignment.center,
           children: [
             const Text(
-              "Build with Flutter by ",
+              StringConst.build,
               style: TextStyle(
                   color: CustomColor.whiteSecondary, letterSpacing: 1.2),
             ),
             GestureDetector(
               onTap: () {
-                launchURL(Urls.linkedIn);
+                launchURL(StringConst.linkedInUrl);
               },
               child: const Text(
-                "Mohana Priya",
+                StringConst.mohanapriyaLink,
                 style: TextStyle(
                   color: Colors.blue,
                   decoration: TextDecoration.underline,
@@ -40,7 +40,7 @@ class Footer extends StatelessWidget {
               ),
             ),
             const Text(
-              " | © 2024 all rights reserved",
+              StringConst.copyRight,
               style: TextStyle(
                   color: CustomColor.whiteSecondary, letterSpacing: 1.2),
             ),

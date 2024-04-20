@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/const/strings.dart';
 import 'package:mohana_priya_portfolio/data/contacts.dart';
 
 import '../../service/services.dart';
@@ -20,16 +21,16 @@ class AboutDesktop extends StatelessWidget {
           const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "About Me - Who I Am",
+                StringConst.aboutMe,
                 style: TextStyle(fontSize: 20),
               )),
           CircleAvatar(
             radius: screenSize.width / 9,
-            backgroundImage: const AssetImage('assets/profile.jpeg'),
+            backgroundImage: const AssetImage(StringConst.profile),
           ),
           const SizedBox(height: 40),
           const Text(
-            "I am a passionate Flutter developer with two years of experience. I love building pixel-perfect apps for iOS and Android, \nensuring responsiveness and publishing on App Store and Play Store. Currently, I'm exploring fresh career paths.",
+            StringConst.passinateDeveloper,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 22,
@@ -37,7 +38,7 @@ class AboutDesktop extends StatelessWidget {
           ),
           const SizedBox(height: 70),
           const Text(
-            'You can also connect with me here - let\'s stay in touch!',
+            StringConst.letsConnect,
             style: TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 10),
@@ -49,7 +50,7 @@ class AboutDesktop extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: () {
-                      if (contacts[i].imgPath == 'assets/mail.png') {
+                      if (contacts[i].imgPath == StringConst.mailId) {
                         launchEmail(contacts[i].url);
                       } else {
                         launchURL(contacts[i].url);

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:mohana_priya_portfolio/const/size.dart';
+import 'package:mohana_priya_portfolio/const/strings.dart';
 import 'package:mohana_priya_portfolio/data/skills.dart';
 
 class Skills extends StatelessWidget {
@@ -19,12 +20,18 @@ class Skills extends StatelessWidget {
               Align(
                   alignment: Alignment.topLeft,
                   child: Text(
-                    "My Skills - What I Know",
+                    StringConst.mySkills,
                     style: TextStyle(
-                        fontSize: screenWidth < mobileWidth ? 15 : 20),
+                      fontSize: screenWidth < mobileWidth ? 15 : 20,
+                    ),
                   )),
+              const SizedBox(
+                height: 20,
+              ),
               Wrap(
                 alignment: WrapAlignment.center,
+                spacing: 20,
+                runSpacing: 20,
                 children: [
                   for (int i = 0; i < skills.length; i++)
                     Padding(
@@ -35,6 +42,9 @@ class Skills extends StatelessWidget {
                             screenWidth < mobileWidth ? double.infinity : 170,
                         child: Card(
                           elevation: 10,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                          ),
                           child: Padding(
                             padding: const EdgeInsets.all(40),
                             child: Column(
@@ -49,7 +59,9 @@ class Skills extends StatelessWidget {
                                 Text(
                                   skills[i].name,
                                   style: const TextStyle(
-                                      fontSize: 16, color: Colors.black),
+                                    fontSize: 16,
+                                    color: Colors.black,
+                                  ),
                                 ),
                               ],
                             ),

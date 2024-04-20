@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mohana_priya_portfolio/const/urls.dart';
 
 import '../../const/colors.dart';
+import '../../const/strings.dart';
 import '../../data/contacts.dart';
 import '../../service/services.dart';
 
@@ -25,7 +25,7 @@ class MainDesktop extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Hi there, Welcome to My Portfolio',
+                  StringConst.welcome,
                   style: TextStyle(
                     letterSpacing: 1.5,
                     fontSize: 20,
@@ -33,7 +33,7 @@ class MainDesktop extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'I\'m Mohana Priya',
+                  StringConst.mohanapriya,
                   style: TextStyle(
                     // fontWeight: FontWeight.bold,
                     height: 1.5,
@@ -42,7 +42,7 @@ class MainDesktop extends StatelessWidget {
                   ),
                 ),
                 const Text(
-                  'Flutter Developer',
+                  StringConst.flutterDeveloper,
                   style: TextStyle(
                     // fontWeight: FontWeight.bold,
                     height: 1.5,
@@ -56,7 +56,7 @@ class MainDesktop extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        launchURL(Urls.resume);
+                        launchURL(StringConst.resumeUrl);
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
@@ -65,7 +65,7 @@ class MainDesktop extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          'Download CV',
+                          StringConst.dwnld,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
@@ -73,7 +73,7 @@ class MainDesktop extends StatelessWidget {
                     const SizedBox(width: 15),
                     ElevatedButton(
                       onPressed: () {
-                        launchEmail("smohanapriya2604@gmail.com");
+                        launchEmail(StringConst.mailId);
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(
@@ -82,7 +82,7 @@ class MainDesktop extends StatelessWidget {
                       child: const Padding(
                         padding: EdgeInsets.all(8.0),
                         child: Text(
-                          'Hire Me Now',
+                          StringConst.hireMe,
                           style: TextStyle(fontSize: 18),
                         ),
                       ),
@@ -100,7 +100,7 @@ class MainDesktop extends StatelessWidget {
                         padding: const EdgeInsets.all(10.0),
                         child: InkWell(
                           onTap: () {
-                            if (contacts[i].imgPath == 'assets/mail.png') {
+                            if (contacts[i].imgPath == StringConst.gamilLogo) {
                               launchEmail(contacts[i].url);
                             } else {
                               launchURL(contacts[i].url);
@@ -130,7 +130,7 @@ class MainDesktop extends StatelessWidget {
                 topLeft: Radius.circular(100.0),
                 bottomLeft: Radius.circular(100.0),
               ),
-              child: Image.asset('assets/my_profile.jpeg'),
+              child: Image.asset(StringConst.profile2),
             ),
           ),
 

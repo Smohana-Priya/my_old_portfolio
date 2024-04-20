@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/const/strings.dart';
 
 import '../model/nav_item.dart';
 
 List<NavItem> navItems = [
-  NavItem('Home', Icons.home),
-  NavItem('Skills', Icons.handyman),
-  NavItem('About', Icons.mail),
+  NavItem(StringConst.home, Icons.home),
+  NavItem(StringConst.skills, Icons.handyman),
+  NavItem(StringConst.about, Icons.mail),
 ];

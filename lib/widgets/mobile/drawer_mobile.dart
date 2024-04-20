@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/data/nav_items.dart';
 
 import '../../const/colors.dart';
-import '../../const/urls.dart';
+
+import '../../const/strings.dart';
 import '../../service/services.dart';
 
 class DrawerMobile extends StatelessWidget {
@@ -61,16 +62,16 @@ class DrawerMobile extends StatelessWidget {
               alignment: WrapAlignment.center,
               children: [
                 const Text(
-                  "Build with Flutter by ",
+                  StringConst.build,
                   style: TextStyle(
                       color: CustomColor.bgLight2, letterSpacing: 1.1),
                 ),
                 GestureDetector(
                   onTap: () {
-                    launchURL(Urls.linkedIn);
+                    launchURL(StringConst.linkedInUrl);
                   },
                   child: const Text(
-                    " Mohana Priya",
+                    StringConst.mohanapriyaLink,
                     style: TextStyle(
                       color: Colors.blue,
                       decoration: TextDecoration.underline,

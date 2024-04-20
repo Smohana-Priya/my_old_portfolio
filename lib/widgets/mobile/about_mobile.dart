@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../const/strings.dart';
 import '../../data/contacts.dart';
 import '../../service/services.dart';
 
@@ -21,18 +22,18 @@ class AboutMobile extends StatelessWidget {
           const Align(
               alignment: Alignment.topLeft,
               child: Text(
-                "About Me - Who I Am",
+                StringConst.aboutMe,
                 style: TextStyle(fontSize: 15),
               )),
           CircleAvatar(
             radius: screenSize.width / 7,
-            backgroundImage: const AssetImage('assets/profile.jpeg'),
+            backgroundImage: const AssetImage(StringConst.profile),
           ),
           const SizedBox(
-            height: 10,
+            height: 20,
           ),
           const Text(
-            "I am a passionate Flutter developer with two years of experience, I love building pixel-perfect apps for iOS and Android, ensuring responsiveness and publishing on App Store and Play Store. Now exploring fresh career paths!!!.",
+            StringConst.passinateDeveloper,
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 13,
@@ -41,8 +42,8 @@ class AboutMobile extends StatelessWidget {
           const SizedBox(
             height: 30,
           ),
-          const Text('You can also connect with me here'),
-          const Text('let\'s stay in touch!'),
+          const Text(StringConst.connectWithMe),
+          const Text(StringConst.stayInTouch),
           const SizedBox(
             height: 5,
           ),
@@ -54,7 +55,7 @@ class AboutMobile extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: InkWell(
                     onTap: () {
-                      if (contacts[i].imgPath == 'assets/mail.png') {
+                      if (contacts[i].imgPath == StringConst.mailId) {
                         launchEmail(contacts[i].url);
                       } else {
                         launchURL(contacts[i].url);

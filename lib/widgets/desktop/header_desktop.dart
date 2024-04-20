@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/const/colors.dart';
+import 'package:mohana_priya_portfolio/const/strings.dart';
 import 'package:mohana_priya_portfolio/data/nav_items.dart';
 
 import '../../service/services.dart';
@@ -20,7 +21,7 @@ class HeaderDesktop extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               const Text(
-                "Mp",
+                StringConst.mp,
                 style: TextStyle(
                     fontSize: 22, color: Colors.amber, letterSpacing: 1.2),
               ),
@@ -42,17 +43,16 @@ class HeaderDesktop extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  launchEmail("smohanapriya2604@gmail.com");
+                  launchEmail(StringConst.mailId);
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 ),
                 child: const Text(
-                  'Contact Me',
+                  StringConst.connectMe,
                   style: TextStyle(
                     fontSize: 20,
-                    // fontWeight: FontWeight.w500,
                   ),
                 ),
               )

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mohana_priya_portfolio/const/urls.dart';
 
 import '../../const/colors.dart';
+import '../../const/strings.dart';
 import '../../data/contacts.dart';
 import '../../service/services.dart';
 
@@ -22,7 +22,7 @@ class MainMobile extends StatelessWidget {
           const Align(
             alignment: Alignment.center,
             child: Text(
-              'Hi there, Welcome to My Portfolio',
+              StringConst.welcome,
               style: TextStyle(
                 letterSpacing: 1.5,
                 fontSize: 16,
@@ -31,7 +31,7 @@ class MainMobile extends StatelessWidget {
             ),
           ),
           const Text(
-            'I\'m Mohana Priya',
+            StringConst.mohanapriya,
             style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
@@ -40,7 +40,7 @@ class MainMobile extends StatelessWidget {
                 color: CustomColor.whitePrimary),
           ),
           const Text(
-            'Flutter Developer',
+            StringConst.flutterDeveloper,
             style: TextStyle(
                 // fontWeight: FontWeight.bold,
                 height: 1.5,
@@ -53,7 +53,7 @@ class MainMobile extends StatelessWidget {
           ),
           ClipOval(
             child: Image.asset(
-              'assets/my_profile.jpeg',
+              StringConst.profile2,
               width: screenSize.width,
               height: screenSize.height / 2.5,
             ),
@@ -66,24 +66,24 @@ class MainMobile extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  launchURL(Urls.resume);
+                  launchURL(StringConst.resumeUrl);
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 ),
-                child: const Text('Download CV'),
+                child: const Text(StringConst.dwnld),
               ),
               const SizedBox(width: 15),
               ElevatedButton(
                 onPressed: () {
-                  launchEmail("smohanapriya2604@gmail.com");
+                  launchEmail(StringConst.mailId);
                 },
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 ),
-                child: const Text('Hire Me Now'),
+                child: const Text(StringConst.hireMe),
               )
             ],
           ),
@@ -98,7 +98,7 @@ class MainMobile extends StatelessWidget {
                   padding: const EdgeInsets.all(10.0),
                   child: InkWell(
                     onTap: () {
-                      if (contacts[i].imgPath == 'assets/mail.png') {
+                      if (contacts[i].imgPath == StringConst.gamilLogo) {
                         launchEmail(contacts[i].url);
                       } else {
                         launchURL(contacts[i].url);
