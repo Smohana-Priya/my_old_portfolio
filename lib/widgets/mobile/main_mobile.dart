@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/const/urls.dart';
 
 import '../../const/colors.dart';
 import '../../service/services.dart';
@@ -43,27 +44,29 @@ class MainMobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+          Wrap(
+            alignment: WrapAlignment.center,
             children: [
               ElevatedButton(
-                onPressed: () {},
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Download CV'),
+                onPressed: () {
+                  launchURL(Urls.resume);
+                },
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 ),
+                child: const Text('Download CV'),
               ),
-              const SizedBox(
-                width: 15,
-              ),
+              const SizedBox(width: 15),
               ElevatedButton(
                 onPressed: () {
                   launchEmail("smohanapriya2604@gmail.com");
                 },
-                child: const Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: Text('Hire Me Now'),
+                style: ElevatedButton.styleFrom(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 15, horizontal: 20),
                 ),
+                child: const Text('Hire Me Now'),
               )
             ],
           )

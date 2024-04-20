@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/const/urls.dart';
 
 import '../../const/colors.dart';
 import '../../service/services.dart';
@@ -41,13 +42,12 @@ class MainDesktop extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 20),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                Wrap(
+                  alignment: WrapAlignment.center,
                   children: [
                     ElevatedButton(
                       onPressed: () {
-                        //   launchURL(
-                        //       'https://drive.google.com/file/d/15ICUDiS_LKm5U5_79T9ueAqNlPExcQl2/view?usp=drivesdk');
+                        launchURL(Urls.resume);
                       },
                       style: ElevatedButton.styleFrom(
                         padding: const EdgeInsets.symmetric(

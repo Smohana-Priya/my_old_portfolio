@@ -65,8 +65,8 @@ class _FooterMobileState extends State<Footer> {
           color: CustomColor.scaffoldbg,
           child: Padding(
             padding: const EdgeInsets.all(15.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+            child: Wrap(
+              alignment: WrapAlignment.center,
               children: [
                 const Text(
                   "Build with Flutter by ",
@@ -83,6 +83,10 @@ class _FooterMobileState extends State<Footer> {
                       decoration: TextDecoration.underline,
                     ),
                   ),
+                ),
+                const Text(
+                  " | © 2024 all rights reserved",
+                  style: TextStyle(color: CustomColor.whiteSecondary),
                 ),
               ],
             ),
