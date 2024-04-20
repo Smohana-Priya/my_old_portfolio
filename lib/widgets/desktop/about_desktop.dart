@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../const/contact_item.dart';
+import 'package:mohana_priya_portfolio/data/contacts.dart';
 
 import '../../service/services.dart';
 
@@ -37,15 +37,15 @@ class AboutDesktop extends StatelessWidget {
             Wrap(
               alignment: WrapAlignment.center,
               children: [
-                for (int i = 0; i < imgs.length; i++)
+                for (int i = 0; i < contacts.length; i++)
                   Padding(
                     padding: const EdgeInsets.all(10.0),
                     child: InkWell(
                       onTap: () {
-                        if (imgs[i] == 'mail.png') {
-                          launchEmail(urls[i]);
+                        if (contacts[i].imgPath == 'assets/mail.png') {
+                          launchEmail(contacts[i].url);
                         } else {
-                          launchURL(urls[i]);
+                          launchURL(contacts[i].url);
                         }
                       },
                       child: Container(
@@ -53,7 +53,7 @@ class AboutDesktop extends StatelessWidget {
                         decoration: const BoxDecoration(
                             shape: BoxShape.circle, color: Colors.white),
                         child: Image.asset(
-                          imgs[i],
+                          contacts[i].imgPath,
                           width: 25,
                           height: 25,
                         ),

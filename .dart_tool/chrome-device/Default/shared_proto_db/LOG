@@ -1,20 +1,13 @@
-2024/04/19-19:40:08.756 8c03 Reusing MANIFEST /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.dpBFGk/flutter_tools_chrome_device.6i5mly/Default/shared_proto_db/MANIFEST-000001
-2024/04/19-19:40:08.757 8c03 Recovering log #16
-2024/04/19-19:40:08.759 8c03 Reusing old log /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.dpBFGk/flutter_tools_chrome_device.6i5mly/Default/shared_proto_db/000016.log 
-2024/04/19-19:40:08.760 8c03 Delete type=0 #13
-2024/04/19-19:40:08.760 8c03 Delete type=0 #7
-2024/04/19-19:40:08.760 8c03 Delete type=0 #4
-2024/04/19-19:40:08.761 8c03 Delete type=0 #10
-2024/04/19-19:40:08.761 8c03 Delete type=0 #3
-2024/04/19-19:40:20.396 8c03 Level-0 table #20: started
-2024/04/19-19:40:20.546 8c03 Level-0 table #20: 125911 bytes OK
-2024/04/19-19:40:20.589 8c03 Delete type=0 #16
-2024/04/19-19:40:20.590 8c03 Compacting 4@0 + 1@1 files
-2024/04/19-19:40:20.617 8c03 Generated table #21@0: 987 keys, 116998 bytes
-2024/04/19-19:40:20.617 8c03 Compacted 4@0 + 1@1 files => 116998 bytes
-2024/04/19-19:40:20.659 8c03 compacted to: files[ 0 1 1 0 0 0 0 ]
-2024/04/19-19:40:20.660 8c03 Delete type=2 #14
-2024/04/19-19:40:20.660 8c03 Delete type=2 #17
-2024/04/19-19:40:20.660 8c03 Delete type=2 #11
-2024/04/19-19:40:20.660 8c03 Delete type=2 #8
-2024/04/19-19:40:20.660 8c03 Delete type=2 #20
+2024/04/20-09:58:06.119 b603 Reusing MANIFEST /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.VHgkIZ/flutter_tools_chrome_device.LX4QU2/Default/shared_proto_db/MANIFEST-000001
+2024/04/20-09:58:06.120 b603 Recovering log #19
+2024/04/20-09:58:06.120 b603 Reusing old log /private/var/folders/34/5hmdvg3x20q3_tcfkjcx3xhm0000gn/T/flutter_tools.VHgkIZ/flutter_tools_chrome_device.LX4QU2/Default/shared_proto_db/000019.log 
+2024/04/20-09:58:06.121 b603 Delete type=0 #13
+2024/04/20-09:58:06.121 b603 Delete type=0 #7
+2024/04/20-09:58:06.121 b603 Delete type=0 #4
+2024/04/20-09:58:06.121 b603 Delete type=0 #10
+2024/04/20-09:58:06.121 b603 Delete type=0 #16
+2024/04/20-09:58:06.121 b603 Delete type=0 #3
+2024/04/20-09:58:06.121 b603 Delete type=2 #14
+2024/04/20-09:58:06.121 b603 Delete type=2 #17
+2024/04/20-09:58:06.121 b603 Delete type=2 #11
+2024/04/20-09:58:06.121 b603 Delete type=2 #8

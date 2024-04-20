@@ -3,10 +3,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:mohana_priya_portfolio/const/urls.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:mohana_priya_portfolio/const/colors.dart';
+import 'package:mohana_priya_portfolio/data/contacts.dart';
 
-import '../const/contact_item.dart';
 import '../service/services.dart';
 
 class Footer extends StatefulWidget {
@@ -33,15 +32,15 @@ class _FooterMobileState extends State<Footer> {
         Wrap(
           alignment: WrapAlignment.center,
           children: [
-            for (int i = 0; i < imgs.length; i++)
+            for (int i = 0; i < contacts.length; i++)
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: InkWell(
                   onTap: () {
-                    if (imgs[i] == 'mail.png') {
-                      launchEmail(urls[i]);
+                    if (contacts[i].imgPath == 'assets/mail.png') {
+                      launchEmail(contacts[i].url);
                     } else {
-                      launchURL(urls[i]);
+                      launchURL(contacts[i].url);
                     }
                   },
                   child: Container(
@@ -49,7 +48,7 @@ class _FooterMobileState extends State<Footer> {
                     decoration: const BoxDecoration(
                         shape: BoxShape.circle, color: Colors.white),
                     child: Image.asset(
-                      imgs[i],
+                      contacts[i].imgPath,
                       width: 15,
                       height: 15,
                     ),
@@ -75,7 +74,7 @@ class _FooterMobileState extends State<Footer> {
                 ),
                 GestureDetector(
                   onTap: () {
-                    _launchURL(Urls.linkedIn);
+                    launchURL(Urls.linkedIn);
                   },
                   child: const Text(
                     "Mohana Priya",
@@ -91,13 +90,5 @@ class _FooterMobileState extends State<Footer> {
         ),
       ],
     );
-  }
-
-  void _launchURL(String url) async {
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
   }
 }

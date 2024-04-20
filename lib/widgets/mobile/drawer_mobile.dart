@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mohana_priya_portfolio/data/nav_items.dart';
 
 import '../../const/colors.dart';
-import '../../const/nav_item.dart';
 
 class DrawerMobile extends StatelessWidget {
   final Function(int) onNavItemTap;
@@ -33,7 +33,7 @@ class DrawerMobile extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          for (int i = 0; i < navTitles.length; i++)
+          for (int i = 0; i < navItems.length; i++)
             ListTile(
               contentPadding:
                   const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
@@ -44,8 +44,8 @@ class DrawerMobile extends StatelessWidget {
               onTap: () {
                 onNavItemTap(i);
               },
-              leading: Icon(navIcons[i]),
-              title: Text(navTitles[i]),
+              leading: Icon(navItems[i].icon),
+              title: Text(navItems[i].title),
             )
         ],
       ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mohana_priya_portfolio/const/colors.dart';
-import 'package:mohana_priya_portfolio/const/nav_item.dart';
+import 'package:mohana_priya_portfolio/data/nav_items.dart';
 
 import '../../service/services.dart';
 
@@ -24,13 +24,13 @@ class HeaderDesktop extends StatelessWidget {
               style: TextStyle(fontSize: 22, color: Colors.amber),
             ),
             const Spacer(),
-            for (int i = 0; i < navTitles.length; i++)
+            for (int i = 0; i < navItems.length; i++)
               TextButton(
                   onPressed: () {
                     onMenuItemTap(i);
                   },
                   child: Text(
-                    navTitles[i],
+                    navItems[i].title,
                     style: const TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w500,

@@ -38,73 +38,75 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
-    return LayoutBuilder(builder: (context, constraint) {
-      return Scaffold(
-          backgroundColor: CustomColor.scaffoldbg,
-          key: scaffoldKey,
-          appBar: screenSize.width <= mobileWidth
-              ? AppBar(
-                  backgroundColor: Theme.of(context).cardColor,
-                  actions: const [
-                    Padding(
-                      padding: EdgeInsets.only(right: 20),
-                      child: Text("Mohana Priya"),
-                    )
-                  ],
-                )
-              : PreferredSize(
-                  preferredSize: Size(screenSize.width, 100),
-                  child: HeaderDesktop(
-                    onMenuItemTap: (navIndex) {
-                      scrollToSection(navIndex);
-                    },
-                  )),
-          drawer: screenSize.width >= mobileWidth
-              ? null
-              : Drawer(
-                  child: DrawerMobile(
-                    onNavItemTap: (navIndex) {
-                      scaffoldKey.currentState?.closeDrawer();
-                      scrollToSection(navIndex);
-                    },
+    return SafeArea(
+      child: LayoutBuilder(builder: (context, constraint) {
+        return Scaffold(
+            backgroundColor: CustomColor.scaffoldbg,
+            key: scaffoldKey,
+            appBar: screenSize.width <= mobileWidth
+                ? AppBar(
+                    backgroundColor: Theme.of(context).cardColor,
+                    actions: const [
+                      Padding(
+                        padding: EdgeInsets.only(right: 20),
+                        child: Text("Mohana Priya"),
+                      )
+                    ],
+                  )
+                : PreferredSize(
+                    preferredSize: Size(screenSize.width, 100),
+                    child: HeaderDesktop(
+                      onMenuItemTap: (navIndex) {
+                        scrollToSection(navIndex);
+                      },
+                    )),
+            drawer: screenSize.width >= mobileWidth
+                ? null
+                : Drawer(
+                    child: DrawerMobile(
+                      onNavItemTap: (navIndex) {
+                        scaffoldKey.currentState?.closeDrawer();
+                        scrollToSection(navIndex);
+                      },
+                    ),
                   ),
-                ),
-          body: SingleChildScrollView(
-            controller: scrollCntrl,
-            child: Column(
-              children: [
-                ResponsiveLayout(
-                  mobile: MainMobile(
-                    key: navbarKeys[0],
+            body: SingleChildScrollView(
+              controller: scrollCntrl,
+              child: Column(
+                children: [
+                  ResponsiveLayout(
+                    mobile: MainMobile(
+                      key: navbarKeys[0],
+                    ),
+                    desktop: MainDesktop(
+                      key: navbarKeys[0],
+                    ),
                   ),
-                  desktop: MainDesktop(
-                    key: navbarKeys[0],
+                  ResponsiveLayout(
+                    mobile: AboutMobile(
+                      key: navbarKeys[1],
+                    ),
+                    desktop: AboutDesktop(
+                      key: navbarKeys[1],
+                    ),
                   ),
-                ),
-                ResponsiveLayout(
-                  mobile: AboutMobile(
-                    key: navbarKeys[1],
+                  Skills(
+                    key: navbarKeys[2],
                   ),
-                  desktop: AboutDesktop(
-                    key: navbarKeys[1],
-                  ),
-                ),
-                Skills(
-                  key: navbarKeys[2],
-                ),
-                const Footer()
-              ],
+                  const Footer()
+                ],
+              ),
             ),
-          ),
-          floatingActionButton: isfabVisible
-              ? FloatingActionButton(
-                  onPressed: () {
-                    scrollToSection(0);
-                  },
-                  child: const Icon(Icons.arrow_upward),
-                )
-              : null);
-    });
+            floatingActionButton: isfabVisible
+                ? FloatingActionButton(
+                    onPressed: () {
+                      scrollToSection(0);
+                    },
+                    child: const Icon(Icons.arrow_upward),
+                  )
+                : null);
+      }),
+    );
   }
 
   void scrollToSection(int navIndex) {

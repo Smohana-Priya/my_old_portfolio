@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import '../../const/contact_item.dart';
 
+import '../../data/contacts.dart';
 import '../../service/services.dart';
 
 // ignore_for_file: deprecated_member_use
@@ -42,15 +41,15 @@ class AboutMobile extends StatelessWidget {
           Wrap(
             alignment: WrapAlignment.center,
             children: [
-              for (int i = 0; i < imgs.length; i++)
+              for (int i = 0; i < contacts.length; i++)
                 Padding(
                   padding: const EdgeInsets.all(10.0),
                   child: InkWell(
                     onTap: () {
-                      if (imgs[i] == 'mail.png') {
-                        launchEmail(urls[i]);
+                      if (contacts[i].imgPath == 'assets/mail.png') {
+                        launchEmail(contacts[i].url);
                       } else {
-                        launchURL(urls[i]);
+                        launchURL(contacts[i].url);
                       }
                     },
                     child: Container(
@@ -58,7 +57,7 @@ class AboutMobile extends StatelessWidget {
                       decoration: const BoxDecoration(
                           shape: BoxShape.circle, color: Colors.white),
                       child: Image.asset(
-                        imgs[i],
+                        contacts[i].imgPath,
                         width: 25,
                         height: 25,
                       ),
