@@ -50,7 +50,7 @@ class AboutDesktop extends StatelessWidget {
                   padding: const EdgeInsets.all(8.0),
                   child: InkWell(
                     onTap: () {
-                      if (contacts[i].imgPath == StringConst.mailId) {
+                      if (contacts[i].imgPath == StringConst.gamilLogo) {
                         launchEmail(contacts[i].url);
                       } else {
                         launchURL(contacts[i].url);
