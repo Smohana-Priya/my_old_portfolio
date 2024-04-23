@@ -40,8 +40,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     final screenSize = MediaQuery.of(context).size;
     return SafeArea(
-      child: LayoutBuilder(builder: (context, constraint) {
-        return Scaffold(
+        child: Scaffold(
             backgroundColor: CustomColor.scaffoldbg,
             key: scaffoldKey,
             appBar: screenSize.width <= mobileWidth
@@ -108,9 +107,7 @@ class _HomeState extends State<Home> {
                     },
                     child: const Icon(Icons.arrow_upward),
                   )
-                : null);
-      }),
-    );
+                : null));
   }
 
   void scrollToSection(int navIndex) {
